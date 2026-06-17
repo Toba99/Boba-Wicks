@@ -136,3 +136,7 @@ Access the admin portal at **http://localhost:5173/admin**
 ## License
 
 Private — demo project.
+
+## Render
+- this is where the app server is deployed
+- https://dashboard.render.com
