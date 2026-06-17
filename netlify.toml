@@ -3,7 +3,14 @@
   command = "npm run build"
   publish = "dist"
 
-# React Router — serve index.html for all routes (direct links & refresh)
+# Proxy API requests to Render (must be listed BEFORE the SPA catch-all)
+[[redirects]]
+  from = "/api/*"
+  to = "https://boba-wicks-api.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+# React Router — serve index.html for all other routes
 [[redirects]]
   from = "/*"
   to = "/index.html"
