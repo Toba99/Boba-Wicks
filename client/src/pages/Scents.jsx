@@ -2,8 +2,9 @@ import { useState, useMemo, useEffect } from 'react';
 import SectionHeader from '../components/SectionHeader';
 import ProductCard from '../components/ProductCard';
 import { SCENT_TYPES } from '../data/products';
+import { apiUrl } from '../lib/apiBase';
 
-const API_BASE = '/api';
+const API_BASE = apiUrl('/api');
 
 /**
  * Products page with search, scent-type filters, and product grid.

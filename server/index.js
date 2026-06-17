@@ -9,7 +9,16 @@ import adminRoutes from './routes/admin.js';
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+const allowedOrigins = process.env.CLIENT_ORIGIN
+  ? process.env.CLIENT_ORIGIN.split(',').map((o) => o.trim())
+  : undefined;
+
+app.use(
+  cors({
+    origin: allowedOrigins ?? true,
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use('/api', publicRoutes);

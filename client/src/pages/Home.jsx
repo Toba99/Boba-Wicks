@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader';
 import ProductCard from '../components/ProductCard';
 import { products as fallbackProducts } from '../data/products';
 import { CandleVisual } from '../utils/candleVisuals';
+import { apiUrl } from '../lib/apiBase';
 
 /** Homepage with CMS-driven hero, featured products, and brand highlights */
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
   const [featured, setFeatured] = useState([]);
 
   useEffect(() => {
-    fetch('/api/homepage')
+    fetch(apiUrl('/api/homepage'))
       .then((res) => res.json())
       .then((data) => {
         setContent(data.content);

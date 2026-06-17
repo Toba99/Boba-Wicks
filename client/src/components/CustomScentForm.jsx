@@ -6,8 +6,9 @@ import {
   JAR_STYLES,
   calculateCustomPrice,
 } from '../data/products';
+import { apiUrl } from '../lib/apiBase';
 
-const API_BASE = '/api';
+const API_BASE = apiUrl('/api');
 
 /**
  * Custom candle order form with dynamic pricing and API submission.

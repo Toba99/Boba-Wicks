@@ -1,4 +1,6 @@
-const API = '/api/admin';
+import { apiUrl, parseJsonResponse } from '../lib/apiBase';
+
+const API = apiUrl('/api/admin');
 const TOKEN_KEY = 'boba_admin_token';
 
 export function getToken() {
@@ -22,7 +24,7 @@ async function request(path, options = {}) {
   };
 
   const res = await fetch(`${API}${path}`, { ...options, headers });
-  const data = await res.json().catch(() => ({}));
+  const data = await parseJsonResponse(res);
 
   if (res.status === 401) {
     clearToken();
@@ -41,7 +43,7 @@ export const adminApi = {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
     }).then(async (res) => {
-      const data = await res.json();
+      const data = await parseJsonResponse(res);
       if (!res.ok) throw new Error(data.error || 'Login failed');
       setToken(data.token);
       return data;

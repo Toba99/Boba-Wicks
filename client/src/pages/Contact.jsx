@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import SectionHeader from '../components/SectionHeader';
 import { FAQ_ITEMS } from '../data/products';
+import { apiUrl } from '../lib/apiBase';
 
-const API_BASE = '/api';
+const API_BASE = apiUrl('/api');
 
 /** Contact page with form, links, and FAQ accordion */
 export default function Contact() {
