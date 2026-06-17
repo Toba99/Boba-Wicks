@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-ink-800 bg-cream-50 antialiased;
+  }
+
+  ::selection {
+    @apply bg-blush-200 text-ink-900;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/50;
+  }
+
+  .glass-dark {
+    @apply bg-ink-900/80 backdrop-blur-md border border-white/10;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5
+      bg-blush-500 text-white font-medium rounded-full
+      shadow-soft hover:bg-blush-600 hover:shadow-glow
+      transition-all duration-300 hover:-translate-y-0.5
+      focus:outline-none focus:ring-2 focus:ring-blush-400 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5
+      bg-white/80 text-ink-800 font-medium rounded-full
+      border border-blush-200 shadow-soft
+      hover:bg-blush-50 hover:border-blush-300
+      transition-all duration-300 hover:-translate-y-0.5
+      focus:outline-none focus:ring-2 focus:ring-blush-300 focus:ring-offset-2;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-blush-200/80
+      bg-white/90 text-ink-800 placeholder:text-ink-500/60
+      focus:outline-none focus:ring-2 focus:ring-blush-300 focus:border-blush-400
+      transition-all duration-200;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28;
+  }
+}
+
+/* Stagger animation delays for hero children */
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+
+.opacity-0-start {
+  opacity: 0;
+}
