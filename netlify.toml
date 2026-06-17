@@ -6,7 +6,7 @@
 # Proxy API requests to Render (must be listed BEFORE the SPA catch-all)
 [[redirects]]
   from = "/api/*"
-  to = "https://boba-wicks-api.onrender.com/api/:splat"
+  to = "https://boba-wicks.onrender.com/api/:splat"
   status = 200
   force = true
 

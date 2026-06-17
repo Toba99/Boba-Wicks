@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: boba-wicks-api
+    name: boba-wicks
     runtime: node
     rootDir: server
     buildCommand: npm install

@@ -21,6 +21,14 @@ app.use(
 );
 app.use(express.json());
 
+app.get('/', (_req, res) => {
+  res.json({ ok: true, service: 'Boba Wicks API', docs: 'Use /api/* routes' });
+});
+
+app.get('/api/health', (_req, res) => {
+  res.json({ ok: true });
+});
+
 app.use('/api', publicRoutes);
 app.use('/api/admin', adminRoutes);
 
